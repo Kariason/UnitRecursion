@@ -12,11 +12,13 @@ namespace UnitRecursion
         static void Echo(string phrase, int deep)
         {
             var modif = phrase;
-            Console.WriteLine("..." + modif);
+            
             if(modif.Length > 2)
             {
                 modif = modif.Remove(0, 2);
             }
+            Console.BackgroundColor = (ConsoleColor)deep;
+            Console.WriteLine("..." + modif);
             if(deep > 1)
             {
                 Echo(modif, deep - 1);
